@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  mc:
+    build: ../ex01/
+    ports:
+      - "25565:25565"
+    restart: always
+    
+  db:
+    image: mariadb:10.6.3
+    volumes:
+      - db-data:/var/lib/mysql
+    restart: always
+    env_file:
+      - .db-env
+    secrets:
+      - db_root_passwd
+      - db_user_passwd
+    
+  site:
+    depends_on:
+      - db
+    image: wordpress:5.8.0-php8.0-apache
+    ports:
+      - "8080:80"
+    restart: always
+    env_file:
+      - .wp-env
+    secrets:
+      - db_user_passwd
+
+secrets:
+  db_root_passwd:
+    file: ./db_root_passwd
+  db_user_passwd:
+    file: ./db_user_passwd
+
+volumes:
+  db-data:
