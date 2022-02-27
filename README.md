@@ -4,7 +4,7 @@
 </p>
 
 ## Description
-Ce workshop a été réalisé pour permettre au étudiant de découvrir Docker et Docker compose ainsi qu'apprendre les bonnes pratiques.
+Ce workshop a été réalisé pour permettre aux étudiant(e)s de découvrir Docker, Docker compose et apprendre les bonnes pratiques.
 
 ## Installation
 ```sh
