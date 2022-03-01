@@ -17,3 +17,8 @@ Le fichier docker-compose.yml doit contenir les choses suivantes :
  + 1 volume:
      - db-data qui doit permettre que les données de la base de données soit persistantes
 
+## Bonus
+
+* Mettre les variables d'environnement dans un fichier
+* Utiliser docker secrets
+
