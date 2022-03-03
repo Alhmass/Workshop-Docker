@@ -19,4 +19,4 @@ COPY --from=builder /src/app/spigot-1.14.2.jar /src/app/
 EXPOSE 25565
 USER mcuser
 RUN echo eula=true >> eula.txt
-ENTRYPOINT ["java", "-jar", "spigot-1.14.2.jar"]
+CMD ["java", "-jar", "spigot-1.14.2.jar"]
